@@ -168,6 +168,13 @@ npx skills add https://github.com/vercel-labs/skills --skill find-skills
 npx skills add anthropics/claude-code
 ```
 
+Ruby on Rails
+
+```bash
+npx skills add NeverSight/learn-skills.dev --skill rails
+```
+
+
 **[Phoenix Skills](https://github.com/Arize-ai/phoenix)**
 
 ```bash
