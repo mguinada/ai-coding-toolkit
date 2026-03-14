@@ -2,7 +2,7 @@
 name: vitest
 description: "Vitest testing framework for unit tests, component tests, and browser/E2E tests powered by Vite. **PROACTIVE ACTIVATION**: Auto-invoke when editing test files (*.test.*, *.spec.*), working with vitest.config.*, adding tests to Vite projects, or when user mentions testing, unit tests, component tests, or E2E tests in a JavaScript/TypeScript project. **DETECTION**: Check for vitest in package.json, vitest.config.* file, *.test.* or *.spec.* files with vitest imports, or vite.config.* with test property. **USE CASES**: Writing and running tests, component testing (React/Vue/Svelte), browser mode and E2E testing, mocking (functions, modules, globals, timers, file system, requests, dates, classes), snapshots, code coverage, test fixtures, in-source testing, type testing with expectTypeOf, parallelism, reporters, debugging, test annotations, flaky test handling, and CI/CD integration."
 author: mguinada
-version: 1.1.0
+version: 1.2.0
 tags: [vitest, testing, unit-test, e2e, browser, vite, jest-compatible, mocking, coverage, snapshot, parallelism, reporters, debugging]
 ---
 
@@ -416,6 +416,64 @@ For detailed snapshot patterns, see `references/snapshots.md`.
 
 ---
 
+## Debugging Failed Tests
+
+When a test fails, follow this systematic workflow:
+
+### Step 1: Isolate the Failure
+```bash
+# Run only the failing test file
+vitest run path/to/failing.test.ts
+
+# Run specific test by name
+vitest run -t "test name pattern"
+
+# Disable parallelism for clearer errors
+vitest run --no-threads
+```
+
+### Step 2: Examine the Output
+```bash
+# Use verbose reporter for details
+vitest run --reporter=verbose
+
+# The diff output shows expected vs received
+# Example output:
+# AssertionError: expected 2 to deeply equal 3
+# - Expected: 3
+# + Received: 2
+```
+
+### Step 3: Common Fixes
+
+| Error Pattern | Likely Cause | Fix |
+|---------------|--------------|-----|
+| `expected X to equal Y` | Wrong value or logic error | Check the assertion and code logic |
+| `Cannot read property X of undefined` | Missing mock or initialization | Add setup or mock |
+| `Timeout exceeded` | Async not completing | Add `await` or increase timeout |
+| `vi.mock is not hoisted` | Import before mock | Move mock to top of file |
+| `Snapshot is outdated` | Intentional change | Run `vitest -u` to update |
+
+### Step 4: Fix and Verify
+```bash
+# After fixing, run the test again
+vitest run path/to/failing.test.ts
+
+# Then run full suite to catch regressions
+vitest run
+```
+
+### Step 5: Debug with Breakpoints (if needed)
+```bash
+# Debug in VS Code: click "Debug Test" above the test
+# Or use Node inspector:
+node --inspect-brk ./node_modules/.bin/vitest run --no-threads
+```
+
+For detailed debugging techniques, see `references/debugging.md`.
+
+---
+
 ## Coverage
 
 ### Configuration
@@ -443,6 +501,27 @@ export default defineConfig({
 vitest run --coverage
 vitest run --coverage --reporter=json
 ```
+
+### Coverage Validation Checkpoint
+
+After running coverage, verify thresholds passed before proceeding:
+
+```bash
+# Exit code 0 = all thresholds met
+vitest run --coverage && echo "✅ Coverage thresholds passed"
+
+# Check specific coverage in CI
+if vitest run --coverage; then
+  echo "Coverage check passed - safe to merge"
+else
+  echo "Coverage check failed - review report"
+  exit 1
+fi
+```
+
+**Coverage report locations:**
+- `coverage/index.html` — Visual report
+- `coverage/lcov.info` — For codecov/upload
 
 For detailed coverage configuration, see `references/coverage.md`.
 
