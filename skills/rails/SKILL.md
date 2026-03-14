@@ -2,7 +2,7 @@
 name: rails
 description: "Ruby on Rails framework development covering MVC architecture, Active Record, migrations, routing, background jobs, and full-stack web applications. **PROACTIVE ACTIVATION**: Auto-invoke when editing Ruby files in a Rails project, running rails commands, or working with Rails-specific patterns. **DETECTION**: Check for Gemfile with 'rails' gem, config/application.rb, app/ directory (controllers, models, views), db/migrate/, config/routes.rb, bin/rails, or *.rb files with ActionController/ActiveRecord imports. **USE CASES**: Creating controllers/models/migrations, building REST APIs, background jobs with Active Job, real-time features with Action Cable, file uploads with Active Storage, email with Action Mailer, internationalization, authentication, and Rails configuration."
 author: mguinada
-version: 1.2.0
+version: 1.3.0
 tags: [rails, ruby, web, mvc, activerecord, api, actioncable, activestorage, actionmailer]
 ---
 
@@ -24,6 +24,17 @@ rails db:rollback            # Undo last migration
 rails routes                 # List all routes
 rails middleware             # List middleware stack
 ```
+
+### Verification Commands
+```bash
+rails db:migrate:status      # Check migration status
+rails db:version             # Current database version
+rails runner "puts Rails.env" # Quick environment check
+```
+
+**Server verification:** After `rails server`, visit http://localhost:3000. You should see the Rails welcome page or your app root.
+
+**Console verification:** After `rails console`, run `ActiveRecord::Base.connection.tables` to verify database connectivity.
 
 ### Conventions
 | Concept | Convention |
@@ -271,6 +282,37 @@ end
 def down
   remove_column :articles, :status
 end
+```
+
+### Migration Workflow with Validation
+
+**Step 1: Create and review**
+```bash
+rails generate migration AddStatusToArticles status:string
+# Review the generated file in db/migrate/
+```
+
+**Step 2: Run and verify**
+```bash
+rails db:migrate
+rails db:migrate:status     # Confirm migration ran
+git diff db/schema.rb       # Verify schema changes
+```
+
+**Step 3: If something goes wrong**
+```bash
+rails db:rollback           # Undo last migration
+# Fix the migration file
+rails db:migrate            # Re-run
+```
+
+**Recovery from failed migration:**
+```bash
+# If migration failed partway through
+rails db:migrate:status     # Identify failed migration
+rails db:rollback STEP=1    # Roll back specific step
+# Or manually fix data/issues, then:
+rails db:migrate:redo      # Re-run the last migration
 ```
 
 For detailed migration patterns (indexes, foreign keys, data migrations), see `references/migrations.md`.
