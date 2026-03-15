@@ -101,6 +101,38 @@ Skills follow the [Agent Skills](https://agentskills.io/) format.
 
 ---
 
+### Debug
+
+**Use when:** Encountering any bug, test failure, unexpected behavior, or performance problem — before proposing any fix. Triggers on error messages, stack traces, failing tests, "broken", "not working", or "acting weird".
+
+**Scope:** Systematic root-cause-first debugging methodology. Guides a 4-phase process (Root Cause Investigation → Pattern Analysis → Hypothesis Testing → Implementation) that prevents guess-and-check thrashing. Includes multi-component boundary tracing, backward call-stack tracing, and the rule that no fix is written until the root cause is understood. Reference files cover root-cause tracing and defense-in-depth hardening.
+
+---
+
+### Release
+
+**Use when:** Cutting a release, tagging a version, or publishing a new version of the project. Triggers on "release", "cut a release", "tag a release", "ship v1.x", "publish version", or `/release`.
+
+**Scope:** Orchestrates the full release sequence: pre-flight checks (clean tree, on main, up to date with remote), changelog update via the `changelog` skill, version bump in project files (`package.json`, `pyproject.toml`, etc.), release commit via the `git-commit` skill, annotated git tag creation, push to remote, GitHub release creation with changelog notes extracted automatically, and optional package publishing (npm, PyPI, RubyGems). Each step that touches the remote requires explicit user confirmation.
+
+---
+
+### Changelog
+
+**Use when:** Preparing a release, updating a changelog, writing release notes, bumping a version, or after completing a feature branch. Triggers on "update changelog", "write release notes", "prepare release", or `/changelog`.
+
+**Scope:** Generates and maintains structured CHANGELOG.md files following Keep a Changelog format and Semantic Versioning. Covers gathering changes from git history since the last tag, classifying commits into changelog categories, determining the correct version increment (MAJOR/MINOR/PATCH), writing user-perspective entries (not raw git log), producing user-facing release notes, and authoring breaking-change migration guides.
+
+---
+
+### Docker
+
+**Use when:** Creating Dockerfiles, containerizing applications, writing docker-compose files, optimizing image size, or troubleshooting Docker build and runtime issues. Triggers on Dockerfile, docker-compose, "containerize", "docker build", or container-related questions.
+
+**Scope:** Docker containerization guide covering multi-stage build patterns, layer caching optimization, non-root user security hardening, .dockerignore authoring, Docker Compose for local dev with health checks and wait strategies, and image size optimization strategies. Reference files provide language-specific Dockerfile templates (Node.js/TypeScript, Python, Ruby on Rails, Go) and multi-environment Compose patterns with secrets management and network isolation.
+
+---
+
 ## Skill Evaluation
 
 This project includes multiple ways to evaluate Agent Skills quality and format compliance.
