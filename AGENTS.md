@@ -213,6 +213,14 @@ Slash commands in `commands/` provide explicit, on-demand entry points into key 
 
 ---
 
+### `/deploy-check`
+
+**Trigger:** User types `/deploy-check [target or environment]` or wants to validate deployment readiness.
+
+**Action:** Runs a multi-layer pre-flight check. Invokes skill `tdd` and launches the `e2e-runner` agent for QA validation. Launches the `security-reviewer` agent for vulnerability and secrets scanning. Invokes skill `docker` for container and infra readiness; launches the `database-reviewer` agent if migrations are present. Synthesises all findings into an explicit **Go / No-Go** verdict with a deployment plan and rollback procedures.
+
+---
+
 ## Publishing
 
 Skills are published to GitHub. Users install them via the `npx skills` CLI from the skills.sh registry.
