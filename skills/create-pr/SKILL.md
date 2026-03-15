@@ -6,6 +6,10 @@ allowed-tools: Bash(git:*), Bash(gh:*), Bash(gh pr:*), Bash(gh label:*), Read, G
 
 # Create Pull Request
 
+## Collaborating skills
+
+- **Git Commit**: skill: `git-commit` for creating well-structured commit messages before opening a PR
+
 Creates GitHub PRs with conventional commit titles and a body that mirrors `.github/pull_request_template.md`.
 
 ## PR Title Format

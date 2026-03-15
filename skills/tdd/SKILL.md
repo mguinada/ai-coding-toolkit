@@ -8,6 +8,12 @@ tags: [TDD, test driven development, testing, red-green-refactor, rspec, pytest,
 
 # Test-Driven Development
 
+## Collaborating skills
+
+- **Refactor**: skill: `refactor` for systematic code improvement during the refactor phase
+- **Vitest**: skill: `vitest` for JavaScript/TypeScript testing with Vitest framework
+- **Design Patterns**: skill: `design-pattern-adopter` for applying design patterns when refactoring test-covered code
+
 Guide for Red-Green-Refactor workflow. Supports Python (pytest) and Ruby (RSpec).
 
 ## Quick Reference

@@ -8,6 +8,12 @@ tags: [typescript, types, type-safety, generics, tsc, tsconfig, type-inference, 
 
 # TypeScript Expert
 
+## Collaborating skills
+
+- **Vitest**: skill: `vitest` for testing TypeScript code with Vitest framework
+- **Refactor**: skill: `refactor` for improving TypeScript code with test coverage
+- **TDD**: skill: `tdd` for test-driven development workflow in TypeScript
+
 Expert guidance for TypeScript development. This skill uses progressive disclosure - read sections as needed, and dive into reference files when you need deeper coverage.
 
 ## Quick Start

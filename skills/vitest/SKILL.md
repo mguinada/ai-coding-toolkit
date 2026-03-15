@@ -8,6 +8,12 @@ tags: [vitest, testing, unit-test, e2e, browser, vite, jest-compatible, mocking,
 
 # Vitest Testing Framework
 
+## Collaborating skills
+
+- **TDD**: skill: `tdd` for test-driven development workflow using Vitest
+- **Refactor**: skill: `refactor` for improving code with Vitest test coverage
+- **TypeScript**: skill: `typescript` for TypeScript-specific testing patterns and type testing
+
 Vitest is a next-generation testing framework powered by Vite, offering fast tests with native ESM, TypeScript, and JSX support. This skill covers unit testing, component testing, and browser/E2E testing with progressive disclosure.
 
 ## Quick Reference

@@ -8,6 +8,10 @@ tags: [observability, phoenix, arize, tracing, evaluation, monitoring, llm-ops, 
 
 # Phoenix - AI Observability Platform
 
+## Collaborating skills
+
+- **AI Engineering**: skill: `ai-engineering` for building the LLM applications that Phoenix observes
+
 Open-source AI observability and evaluation platform for LLM applications with tracing, evaluation, datasets, experiments, and real-time monitoring.
 
 ## When to Use Phoenix

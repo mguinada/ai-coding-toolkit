@@ -8,6 +8,11 @@ tags: [rails, ruby, web, mvc, activerecord, api, actioncable, activestorage, act
 
 # Ruby on Rails Development
 
+## Collaborating skills
+
+- **TDD**: skill: `tdd` for test-driven development with RSpec in Rails applications
+- **Refactor**: skill: `refactor` for improving Rails code while preserving behavior
+
 Rails is a web application framework following MVC architecture. This skill covers core Rails development patterns with progressive disclosure — start here, then dive into reference files for details.
 
 ## Quick Reference

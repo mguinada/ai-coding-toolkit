@@ -24,6 +24,11 @@ tags: [design-patterns, architecture, refactoring, oop, gof]
 
 # Design Pattern Adopter
 
+## Collaborating skills
+
+- **Refactor**: skill: `refactor` for applying design patterns during refactoring sessions
+- **TDD**: skill: `tdd` for ensuring test coverage before applying pattern-based refactorings
+
 A comprehensive guide to the 23 Gang of Four (GoF) design patterns for analyzing implementations and selecting appropriate patterns when they genuinely fit the problem.
 
 ## How to Use This Skill

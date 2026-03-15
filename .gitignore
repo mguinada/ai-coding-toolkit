@@ -1,3 +1,6 @@
 node_modules
 
 .env
+
+# Workspace directories for skill development
+skills/*-workspace/

@@ -8,9 +8,10 @@ tags: [refactoring, tdd, code-quality, simplification, clean-code]
 
 # Refactor Skill
 
-Use skills:
+## Collaborating skills
 
-- **Design Patterns**: skill: `design-pattern-adopter` for guidance on applying patterns effectively
+- **TDD**: skill: `tdd` for guiding through Red-Green-Refactor cycles and ensuring tests are in place before refactoring
+- **Design Patterns**: skill: `design-pattern-adopter` for guidance on applying design patterns effectively
 
 ## Quick Reference
 
