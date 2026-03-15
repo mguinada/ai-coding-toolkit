@@ -121,6 +121,90 @@ Each skill entry in the README should:
 - Describe capabilities under "**Scope:**"
 - End with `---` separator (except the last skill)
 
+## Commands
+
+Slash commands in `commands/` provide explicit, on-demand entry points into key workflows. They complement skills (which auto-invoke via context detection) by giving users a direct way to trigger a workflow.
+
+### `/commit`
+
+**Trigger:** User types `/commit` or wants to create a git commit.
+
+**Action:** Invokes skill `git-commit`. Inspects staged changes, drafts a conventional commit message, executes the commit, and offers to open a PR.
+
+---
+
+### `/pr`
+
+**Trigger:** User types `/pr` or wants to open a pull request.
+
+**Action:** Invokes skill `create-pr`. Checks branch state, pushes if needed, creates a PR with a conventional title and body, and applies labels. Never merges.
+
+---
+
+### `/changelog`
+
+**Trigger:** User types `/changelog [version]` or wants to update the changelog.
+
+**Action:** Invokes skill `changelog`. Reads git log since the last tag, writes a grouped changelog entry into `CHANGELOG.md`, then invokes skill `git-commit` to commit the update.
+
+---
+
+### `/release`
+
+**Trigger:** User types `/release [version]` or wants to cut a release.
+
+**Action:** Invokes skill `release`. Runs pre-flight checks, invokes skill `changelog`, bumps version, invokes skill `git-commit`, creates an annotated tag, and creates a GitHub release.
+
+---
+
+### `/tdd`
+
+**Trigger:** User types `/tdd [feature description]` or wants to develop with TDD.
+
+**Action:** Invokes skill `tdd`. Drives the Red-Green-Refactor cycle. Launches the `tdd-guide` agent to enforce write-tests-first discipline.
+
+---
+
+### `/refactor`
+
+**Trigger:** User types `/refactor [file or function]` or wants to refactor code.
+
+**Action:** Invokes skill `refactor`. Verifies tests pass first, then applies small safe refactoring steps. Uses skill `tdd` and the `tdd-guide` agent if new tests are needed.
+
+---
+
+### `/debug`
+
+**Trigger:** User types `/debug [error or description]` or needs to investigate a bug.
+
+**Action:** Invokes skill `debug`. Works through four phases: Reproduce → Locate → Fix → Verify. Invokes skill `refactor` for cleanup and skill `tdd` for regression tests after the fix.
+
+---
+
+### `/review`
+
+**Trigger:** User types `/review [file or scope]` or wants a code review.
+
+**Action:** Launches `code-reviewer` and `security-reviewer` agents in parallel. Synthesizes findings into a unified report: Critical → Major → Minor → Security → Positives.
+
+---
+
+### `/agents-md`
+
+**Trigger:** User types `/agents-md` or wants to generate/update `AGENTS.md`.
+
+**Action:** Invokes skill `agents-md-creator`. Detects project type and tech stack, then generates or updates `AGENTS.md` with progressive disclosure structure.
+
+---
+
+### `/docker`
+
+**Trigger:** User types `/docker [service]` or wants Docker scaffolding or an audit.
+
+**Action:** Invokes skill `docker`. Scaffolds `Dockerfile` + `.dockerignore` for new projects, or audits and fixes existing Docker configuration.
+
+---
+
 ## Publishing
 
 Skills are published to GitHub. Users install them via the `npx skills` CLI from the skills.sh registry.
