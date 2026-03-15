@@ -125,6 +125,14 @@ Each skill entry in the README should:
 
 Slash commands in `commands/` provide explicit, on-demand entry points into key workflows. They complement skills (which auto-invoke via context detection) by giving users a direct way to trigger a workflow.
 
+### `/ask`
+
+**Trigger:** User types `/ask [technical question]` or wants architectural consultation and guidance.
+
+**Action:** Orchestrates four architectural advisors (Systems Designer, Technology Strategist, Scalability Consultant, Risk Analyst). Asks clarifying questions if the problem is underspecified. Provides honest analysis including risks and trade-offs without sugar-coating.
+
+---
+
 ### `/commit`
 
 **Trigger:** User types `/commit` or wants to create a git commit.
