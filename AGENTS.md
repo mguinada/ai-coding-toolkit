@@ -193,7 +193,7 @@ Slash commands in `commands/` provide explicit, on-demand entry points into key 
 
 **Trigger:** User types `/review [file or scope]` or wants a code review.
 
-**Action:** Launches `code-reviewer` and `security-reviewer` agents in parallel. Synthesizes findings into a unified report: Critical → Major → Minor → Security → Positives.
+**Action:** Launches `code-reviewer`, `security-reviewer`, and (when the scope includes migrations, schema files, SQL, or ORM models) `database-reviewer` agents in parallel. Synthesizes findings into a unified report: Critical → Major → Minor → Security → Positives.
 
 ---
 
