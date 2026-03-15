@@ -8,6 +8,11 @@ tags: [git, commit, workflow, best-practices]
 
 # Git Commit
 
+## Collaborating skills
+
+- **Create PR**: skill: `create-pr` for creating pull requests after committing changes
+- **Refactor**: skill: `refactor` for commit messages during refactoring sessions
+
 ## Overview
 
 Generate concise, descriptive git commit messages based on staged code changes. Analyzes staged changes and recent commit history to craft well-structured messages following best practices.

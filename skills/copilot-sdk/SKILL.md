@@ -8,6 +8,11 @@ tags: [sdk, copilot, agents, tools, mcp, streaming, sessions]
 
 # GitHub Copilot SDK
 
+## Collaborating skills
+
+- **AI Engineering**: skill: `ai-engineering` for broader agentic system design patterns
+- **Prompt Engineering**: skill: `prompt-engineering` for crafting effective agent prompts and tool descriptions
+
 Embed Copilot's agentic workflows in any application using Python, TypeScript, Go, or .NET.
 
 ## Overview
