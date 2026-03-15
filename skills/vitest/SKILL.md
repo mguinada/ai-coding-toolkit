@@ -644,3 +644,5 @@ For deep dives into specific topics, read these files:
 - API Reference: https://vitest.dev/api/
 - Configuration: https://vitest.dev/config/
 - GitHub: https://github.com/vitest-dev/vitest
+
+*Some parts of this skill are adapted from [Everything Claude Code](https://github.com/affaan-m/everything-claude-code) (credit: [Affaan Mustafa](https://github.com/affaan-m)) under MIT license.*

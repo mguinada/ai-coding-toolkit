@@ -8,6 +8,10 @@ tags: [refactoring, tdd, code-quality, simplification, clean-code]
 
 # Refactor Skill
 
+Use skills:
+
+- **Design Patterns**: skill: `design-pattern-adopter` for guidance on applying patterns effectively
+
 ## Quick Reference
 
 ### Code Smells Reference
