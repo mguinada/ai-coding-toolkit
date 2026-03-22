@@ -1,3 +1,8 @@
+---
+description: Run parallel code, security, database, and Python review agents and synthesise findings into a unified report.
+argument-hint: "file path or scope (e.g. src/auth/)"
+---
+
 ## Usage
 `/review [file path or scope]`
 

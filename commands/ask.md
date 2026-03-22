@@ -1,3 +1,8 @@
+---
+description: Architectural consultation from four specialised advisors — Systems Designer, Technology Strategist, Scalability Consultant, and Risk Analyst.
+argument-hint: "technical question or architecture challenge"
+---
+
 ## Usage
 `/ask [technical question or architecture challenge]`
 

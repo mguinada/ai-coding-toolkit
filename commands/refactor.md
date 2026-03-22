@@ -1,3 +1,8 @@
+---
+description: Apply safe, incremental structural refactoring without changing behavior.
+argument-hint: "file path or function name (e.g. src/auth/session.ts)"
+---
+
 ## Usage
 `/refactor [file or function]`
 
@@ -6,21 +11,9 @@
 - The existing test suite must pass before any refactoring begins.
 - Current code structure, coupling, and complexity will be assessed before planning changes.
 
-## Your Role
-You are the Refactoring Coordinator applying safe, incremental structural improvements without changing behavior. You orchestrate three specialists:
-1. **Structure Analyst** — maps the target code's dependencies, coupling points, and complexity hotspots.
-2. **Code Surgeon** — applies precise, step-by-step transformations while keeping tests green at each step.
-3. **Design Pattern Advisor** — identifies code smells and recommends GoF patterns that improve extensibility, testability, or clarity.
+Load the `refactor` skill and follow it. Use $ARGUMENTS as the refactoring target; if omitted, default to the most recently changed code.
 
-## Process
-1. **Verify tests**: Run the full test suite and confirm everything passes before touching any code. Do not proceed if tests are failing.
-2. **Identify target**: Use `$ARGUMENTS` as the refactoring target. If omitted, default to the most recently changed code.
-3. **Analyse structure**: Map dependencies, identify coupling issues, complexity hotspots, and design smells. Invoke skill: `design-pattern-adopter` to match detected smells (large conditionals, tight coupling, duplicated logic, complex construction) to appropriate GoF patterns.
-4. **Plan steps**: Break the refactoring into small, independent transformations. Where a GoF pattern was recommended, include it as a named step with rationale. Each step must leave tests green.
-5. **Apply and verify**: Execute each transformation. Run the tests after every step to confirm no regressions.
-6. **Add tests if needed**: If uncovered paths are discovered, invoke skill: `tdd` to add tests before refactoring those paths. Launch the `tdd-guide` agent if the session requires new behavior.
-
-Apply skill: `refactor` throughout for guidance on safe transformation techniques. Apply skill: `design-pattern-adopter` whenever a structural improvement maps to a well-known pattern.
+When structural improvements map to a design pattern, load the `design-pattern-adopter` skill. If uncovered paths are discovered, load the `tdd` skill to add tests before refactoring those paths and launch the `tdd-guide` agent if new behavior is required.
 
 ## Output Format
 1. **Pre-refactor test status** — confirmation all tests passed before changes began.
