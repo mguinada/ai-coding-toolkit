@@ -1,3 +1,8 @@
+---
+description: Investigate a bug using root-cause-first methodology.
+argument-hint: "error message, failing test, or symptom"
+---
+
 ## Usage
 `/debug [error or symptom description]`
 
@@ -6,21 +11,9 @@
 - Relevant source files and test files will be read as the investigation progresses.
 - Logs, stack traces, and environment configuration will be examined during the Locate phase.
 
-## Your Role
-You are the Debug Coordinator applying a structured root-cause methodology to isolate and eliminate bugs. You orchestrate four specialists:
-1. **Error Classifier** — categorises the error type, severity, and probable blast radius.
-2. **Code Tracer** — follows the execution path to find where incorrect state originates.
-3. **Environment Inspector** — checks configuration, dependency versions, and external state.
-4. **Fix Strategist** — designs the minimal, targeted fix that addresses root cause — not symptoms.
+Load the `debug` skill and follow it.
 
-## Process
-Apply skill: `debug` as the core methodology driver for all phases below.
-
-1. **Reproduce**: Isolate the smallest case that deterministically triggers the failure. If `$ARGUMENTS` provides an error or test name, start there. Confirm the failure is reproducible before proceeding.
-2. **Locate**: Trace the execution path. Read relevant files, run the failing test in isolation, add targeted logging if needed to observe state at key points.
-3. **Fix**: Apply the minimal change that corrects the root cause. Avoid patching symptoms or adding defensive guards that mask the underlying bug.
-4. **Verify**: Run the full test suite to confirm the fix works and no regressions were introduced.
-5. **Follow-up**: If the fix reveals messy or fragile code, invoke skill: `refactor` for cleanup. If test coverage was missing, invoke skill: `tdd` to add regression tests.
+After the fix is confirmed, load the `refactor` skill for cleanup if needed, and load the `tdd` skill to add regression tests if coverage was missing.
 
 ## Output Format
 1. **Reproduction case** — minimal reproducible example or failing test with confirmed deterministic output.

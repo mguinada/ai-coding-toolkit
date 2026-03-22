@@ -1,3 +1,8 @@
+---
+description: Produce a structured, iterative implementation plan before writing any code.
+argument-hint: "feature or task description"
+---
+
 ## Usage
 `/plan [feature or task description]`
 

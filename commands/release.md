@@ -1,3 +1,8 @@
+---
+description: Orchestrate a full release: pre-flight checks, changelog, version bump, tag, and GitHub release.
+argument-hint: "version (e.g. 1.2.0)"
+---
+
 ## Usage
 `/release [version]`
 
@@ -6,12 +11,7 @@
 - Working tree, test suite, and branch state will be validated before any changes are made.
 - `CHANGELOG.md`, `package.json` (or equivalent manifest), and git tags will all be updated.
 
-## Your Role
-You are the Release Coordinator. Capture the target version from `$ARGUMENTS` (prompt if omitted), then delegate the full release sequence to the skill.
-
-## Process
-1. **Pre-flight gate**: Verify clean working tree, passing tests, and branch up-to-date with `main`. Abort immediately if any check fails.
-2. **Release**: Apply skill: `release` with the target version to execute the complete release sequence (changelog, version bump, commit, tag, push, GitHub release).
+Load the `release` skill and follow it. Use $ARGUMENTS as the target version.
 
 ## Output Format
 1. **Pre-flight report** — pass/fail status for each readiness check.

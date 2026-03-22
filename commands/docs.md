@@ -1,3 +1,8 @@
+---
+description: Generate or update documentation for a file, module, or scope.
+argument-hint: "file, module, or scope (optional)"
+---
+
 ## Usage
 `/docs [file, module, or scope]`
 
