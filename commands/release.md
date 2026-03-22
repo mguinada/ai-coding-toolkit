@@ -15,9 +15,6 @@ Load the `release` skill and follow it. Use $ARGUMENTS as the target version.
 
 ## Output Format
 1. **Pre-flight report** — pass/fail status for each readiness check.
-2. **Changelog entry** — the new section added to `CHANGELOG.md`.
-3. **Version change** — before and after version in the manifest.
-4. **Tag created** — annotated tag name and SHA.
-5. **Release URL** — link to the created GitHub release.
+2. **Release summary** — version released, tag created, and GitHub release URL.
 
 **Do not merge branches. Do not skip pre-flight checks.**

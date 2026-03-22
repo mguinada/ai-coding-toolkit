@@ -16,7 +16,6 @@ Load the `git-commit` skill and follow it. Use $ARGUMENTS as context or a hint f
 After committing, offer to open a pull request with `/pr`.
 
 ## Output Format
-1. **Staged changes summary** — brief description of what is staged.
-2. **Commit message** — final conventional commit with type, scope (if applicable), and subject.
-3. **Commit confirmation** — confirmation that the commit was executed successfully.
-4. **Next action prompt** — offer to run `/pr` if the branch is ready for review.
+1. **Commit message** — final conventional commit with type, scope (if applicable), and subject.
+2. **Commit confirmation** — confirmation that the commit was executed successfully.
+3. **Next action prompt** — offer to run `/pr` if the branch is ready for review.
